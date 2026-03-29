@@ -6,7 +6,7 @@ resource "aws_instance" "expanse" { #this instance created in default security g
   tags = {
     Name = "HelloWorld"
   }
-}
+} 
   
 resource "aws_security_group" "allow_traffic" {
     name = "allow-traffic"

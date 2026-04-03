@@ -12,7 +12,7 @@ resource "aws_subnet" "public_subnet_1" {
   availability_zone       = "us-east-1a" # Specify an AZ
   map_public_ip_on_launch = true
   tags = {
-    Name = "public-subnet-1"
+    Name = "public-subnet-1" 
   }
 }
 

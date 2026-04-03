@@ -3,7 +3,7 @@ resource "aws_vpc" "main" {
   instance_tenancy = "default"
   tags = {
     Name = "terraform-vpc"
-  }
+  } 
 }
  
 resource "aws_subnet" "public_subnet_1" {

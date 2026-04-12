@@ -5,7 +5,7 @@ resource "aws_instance" "roboshop" {
 
   tags = var.ec2_tags 
   
-  }   
+  }    
      
   
 resource "aws_security_group" "allow_all" { 

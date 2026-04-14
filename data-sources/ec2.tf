@@ -5,7 +5,7 @@ resource "aws_instance" "roboshop" {
   vpc_security_group_ids = [ aws_security_group.allow_all.id ]
   
   tags = {
-    Name = "HelloWorld"
+    Name = "HelloWorld" 
   }
 }
 

@@ -5,7 +5,7 @@ resource "aws_instance" "roboshop" {
   vpc_security_group_ids = [aws_security_group.allow_all.id] 
  
   tags = merge( 
-    var.common_tags,
+    var.common_tags, 
     {
       Name        = "${var.project}-${var.instances[count.index]}-${terraform.workspace}" #roboshop-mongodb-terraformworkpace
       Component   = var.instances[count.index]

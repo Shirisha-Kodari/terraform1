@@ -5,7 +5,7 @@
       enable_dns_hostnames = true
       tags = {
         Name = "expanse-vpc" 
-      }
+      } 
     }
 
      resource "aws_subnet" "public" {

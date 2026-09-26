@@ -2,7 +2,7 @@ resource "aws_instance" "expanse" { #this instance created in default security g
   ami           = "ami-09c813fb71547fc4f" 
   instance_type = "t3.micro" 
   vpc_security_group_ids = [ aws_security_group.allow_traffic.id ]      
-
+ 
   tags = {
     Name = "HelloWorld"  
   }

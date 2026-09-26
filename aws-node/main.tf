@@ -4,7 +4,7 @@ resource "aws_instance" "expanse" { #this instance created in default security g
   vpc_security_group_ids = [ aws_security_group.allow_traffic.id ]
 
   tags = {
-    Name = "HelloWorld" 
+    Name = "HelloWorld"  
   }
 } 
   

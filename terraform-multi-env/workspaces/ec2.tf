@@ -1,7 +1,7 @@
 resource "aws_instance" "roboshop" {
   count                  = length(var.instances)
   ami                    = var.ami_id # left and right side names no need to be same
-  instance_type          = lookup(var.instance_type, terraform.workspace) 
+  instance_type          = lookup(var.instance_type, terraform.workspace) #we just want to workspace name
   vpc_security_group_ids = [aws_security_group.allow_all.id] 
  
   tags = merge( 
@@ -12,6 +12,7 @@ resource "aws_instance" "roboshop" {
       Environment = terraform.workspace
     }
   )
+
 
 
 }
@@ -43,3 +44,5 @@ resource "aws_security_group" "allow_all" {
   )
 }
 
+
+#terraform.workspace-->it gice current workspace name 

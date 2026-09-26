@@ -35,7 +35,7 @@ variable "ami_id" {
   default     = "ami-09c813fb71547fc4f"
   description = "AMI ID of joindevops RHEL9"
 }
-variable "instance_type" {
+variable "instance_type" { #this is map 
   default = {
     dev = "t3.micro"
     prod = "t3.small"

@@ -1,17 +1,17 @@
 resource "aws_vpc_peering_connection" "default" {
   count = var.is_peering_required ? 1 : 0 #1-->peering =true or 0-->false 
 
-  peer_vpc_id   = data.aws_vpc.default.id #this is accepter vpc which is default here
-  vpc_id        = aws_vpc.main.id # requester
+  peer_vpc_id   = data.aws_vpc.default.id #this is accepter vpc which is default here this deafult vpc existing vpc 
+  vpc_id        = aws_vpc.main.id # requester vpc created through terraform 
 
-  accepter {
+  accepter { # inside requester we enable dns resolution 
     allow_remote_vpc_dns_resolution = true
   }
 
-  requester {
+  requester { #inside requester we enble vpc remote dns resolution 
     allow_remote_vpc_dns_resolution = true
   }
-  auto_accept = true #if we can use same account so we can auto accept and diffrente used not working 
+  auto_accept = true # after created peering other owner acce[ter should accespt if we can use same account so we can auto accept and diffrente used not working 
 
 tags = merge (
     var.vpc_peering_tags,
